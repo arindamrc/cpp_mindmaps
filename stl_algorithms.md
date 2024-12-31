@@ -5,16 +5,17 @@
 ```mermaid
 mindmap
   root((STL Algorithms))
-    Nonmodifying
+  
+    ((Nonmodifying))
         for_each
-        Counting Elements
+        ))Counting Elements((
             count
             count_if
-        Minimum and Maximum
+        ))Minimum and Maximum((
             min_element
             max_element
             minmax_element
-        Searching
+        ))Searching((
             find
             find_if
             find_if_not
@@ -23,12 +24,12 @@ mindmap
             adjacent_find
             search
             search_n
-        Comparing Ranges
+        ))Comparing Ranges((
             equal
             is_permutation
             mismatch
             lexicographical_compare
-        Predicates For Ranges
+        ))Predicates For Ranges((
             is_sorted
             is_sorted_until
             is_partitioned
@@ -39,83 +40,83 @@ mindmap
             any_of
             none_of
 
-    Modifying
-        Copying Elements
+    ((Modifying))
+        ))Copying Elements((
             copy
             copy_if
             copy_n
             copy_backward
-        Moving Elements
+        ))Moving Elements((
             move
             move_backward
-        Transforming or Combining Elements
+        ))Transforming or Combining Elements((
             transform
-        Swapping Elements
+        ))Swapping Elements((
             swap_ranges
-        Assigning New Values
+        ))Assigning New Values((
             fill
             fill_n
             generate
             generate_n
             iota
-        Replacing Elements
+        ))Replacing Elements((
             replace
             replace_if
             replace_copy
             replace_copy_if
 
-    Removing
-        Removing Certain Values
+    ((Removing))
+        ))Removing Certain Values((
             remove
             remove_if
             remove_copy
             remove_copy_if
-        Removing Duplicates
+        ))Removing Duplicates((
             unique
             unique_copy
 
-    Mutating
-        Reversing Element Order
+    ((Mutating))
+        ))Reversing Element Order((
             reverse
             reverse_copy
-        Rotating Elements
+        ))Rotating Elements((
             rotate
             rotate_copy
-        Permuting Elements
+        ))Permuting Elements((
             next_permutation
             prev_permutation
-        Shuffling Elements
+        ))Shuffling Elements((
             shuffle
             random_shuffle
-        Moving Elements to the Front
+        ))Moving Elements to the Front((
             partition
             stable_partition
-        Partition into Two Subranges
+        ))Partition into Two Subranges((
             partition_copy
 
-    Sorting
-        Sorting All Elements
+    ((Sorting))
+        ))Sorting All Elements((
             sort
             stable_sort
-        Partial Sorting
+        ))Partial Sorting((
             partial_sort
             partial_sort_copy
-        Sorting *nth* Element
+        ))Sorting *nth* Element((
             nth_element
-        Heap Algorithms
+        ))Heap Algorithms((
             make_heap
             push_heap
             pop_heap
             sort_heap
 
-    Sorted-range
-        Searching Elements
+    ((Sorted-range))
+        ))Searching Elements((
             binary_search
             includes
             lower_bound
             upper_bound
             equal_range
-        Merging Elements
+        ))Merging Elements((
             merge
             set_union
             set_intersection
@@ -123,8 +124,8 @@ mindmap
             set_symmetric_difference
             inplace_merge
 
-    Numeric
-        Processing Results
+    ((Numeric))
+        ))Processing Results((
             accumulate
             inner_product
             partial_sum
@@ -134,7 +135,21 @@ mindmap
 
 ## Notes
 
-- Nonmodifying
+### Predicates 
+
+To increase their ﬂexibility and power, several algorithms allow the user to pass user-deﬁned operations, which they call internally. These operations might be ordinary functions, function objects or lambdas. If these functions return a Boolean value, they are called predicates.
+
+### Suffixes
+
+1. `_if`: used when you can call two forms of an algorithm that have the same number of parameters either by passing a value or by passing a function or function object. In this case, the version without the sufﬁx is used for values, and the version with the _if sufﬁx is used for functions and function objects.
+2. `_copy`: used as an indication that elements are not only manipulated but also copied into a destination range.
+
+### Algorithm Types
+
+#### Nonmodifying
+
+Operate with input and forward iterators; therefore, you can call them for all standard containers. 
+
     - for_each
     - Counting Elements
         - count
@@ -168,7 +183,10 @@ mindmap
         - any_of
         - none_of
 
-- Modifying
+#### Modifying
+
+Such algorithms might modify the elements of a range directly or modify them while they are being copied into another range. If elements are copied into a destination range, the source range is not changed.
+
     - Copying Elements
         - copy
         - copy_if
@@ -193,7 +211,7 @@ mindmap
         - replace_copy
         - replace_copy_if
 
-- Removing
+#### Removing
     - Removing Certain Values
         - remove
         - remove_if
@@ -203,7 +221,7 @@ mindmap
         - unique
         - unique_copy
 
-- Mutating
+#### Mutating
     - Reversing Element Order
         - reverse
         - reverse_copy
@@ -222,7 +240,7 @@ mindmap
     - Partition into Two Subranges
         - partition_copy
 
-- Sorting
+#### Sorting
     - Sorting All Elements
         - sort
         - stable_sort
@@ -237,7 +255,7 @@ mindmap
         - pop_heap
         - sort_heap
 
-- Sorted- range
+#### Sorted- range
     - Searching Elements
         - binary_search
         - includes
@@ -252,7 +270,7 @@ mindmap
         - set_symmetric_difference
         - inplace_merge
 
-- Numeric
+#### Numeric
     - Processing Results
         - accumulate
         - inner_product
